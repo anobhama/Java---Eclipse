@@ -1,0 +1,51 @@
+Problem Statement:
+
+US government identified that the number of complaints from customers
+holding accounts in the different banks increased 
+dramatically in last few years
+
+To help the government understand 
+and also improve the services in future, 
+they have asked us to  develop an application to help them 
+analyse the common trends and issues customers faced
+based on  historical data shared with us
+
+Questions:
+
+1. Display all records based on year
+2.Display by bank
+3.Display complaints based on the complaint id provided by the user
+4.Display number of days took by the Bank to close the complaint
+5.Display all the complaints closed/closed with explanation
+6.Display all the complaints which received a timely response
+7.Take input from user for storing new complaints
+
+STEPS:
+1) Create a new project
+2) Create a 3 new packages - entity(for admin), service (middle layer),userApp(for user)
+3) create a class for each package
+4) In entity package
+	-> Import the external jar for CSV Reader
+    	-> Read the csv file given using CSVReader
+	-> Give the connection to database 
+	-> The details from CSV file was inserted in the database
+5) In order to insert the data, tabel is created in db
+	create table records(
+	date_recieved varchar2(60),
+	products varchar2(60),
+	sub_products varchar2(60),
+	issue varchar2(100),
+	sub_issue varchar2(100),
+	company varchar2(60),
+	state varchar2(60),
+	zipcode varchar2(60),
+	submitted_via varchar2(60),
+	date_sent varchar2(60),
+	company_res varchar2(60),
+	timely_response varchar2(60),
+	consumer_disputed varchar2(60),
+	complaint_id varchar2(60)
+	);
+6) In service package,the methods are written in this.
+7) In User package
+	A switch case is perfomed to do the operations
